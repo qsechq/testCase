@@ -12,3 +12,8 @@ export const updateStatus = ({ id, status }) => makeRequest({
     method: 'PATCH',
     data: {status}
 })
+
+export const deleteOrder = ({ id }) => makeRequest({
+    url: `/events/${id}`,
+    method: 'DELETE'
+})

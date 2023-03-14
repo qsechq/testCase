@@ -16,7 +16,7 @@
                 <td class="table-td">{{ order.date }}</td>
                 <td class="table-td">{{ order.status }}</td>
                 <td class="table-td">{{ order.comment }}</td>
-                <td class="table-td--btn"><custom-button class="table-btn table-btn--reject"/></td>
+                <td class="table-td--btn"><custom-button @click="$emit('onRejected', order.id)" class="table-btn table-btn--reject" /></td>
                 <td class="table-td--btn" v-if="order.status != 'Выполнен'"><custom-button @click="$emit('onResolve', order.id)" class="table-btn table-btn--resolve"/></td>
             </tr>
         </tbody>
@@ -33,7 +33,7 @@
                 default: ()=> {}
             }
         },
-        emits: ['onResolve'],
+        emits: ['onResolve, onRejected'],
         name: 'OrderTable',
         setup(props) {
             console.log(props.orders)
