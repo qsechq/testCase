@@ -1,0 +1,72 @@
+$background-gray: #E2E1E1;
+$background-gray2: #D9D9D9;
+$background-white: #FFFFFF;
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+    line-height: 1.8;
+    background: $background-gray;
+    color: #000;
+}
+
+a {
+    color: #000;
+}
+
+.c-container {
+    padding: 0 36px;
+}
+
+#app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+p {
+    margin: 0 0;
+}
+
+svg {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    margin: 0;
+}

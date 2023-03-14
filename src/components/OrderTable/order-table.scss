@@ -1,0 +1,25 @@
+.c-table {
+    border-collapse: collapse;
+    & .table-td {
+        border: 1px solid #000;
+        padding: 9px 26px;
+    }
+    & .table-btn {
+        width: 18px;
+        height: 17px;
+        padding: 0;
+        margin-left: 9px;
+        &--resolve {
+            background: url(../../assets/accept.png) center center no-repeat;
+        }
+        &--reject {
+            background: url(../../assets/close.png) center center no-repeat;
+        }
+    }
+}
+
+.succes {
+    & .table-td {
+        opacity: .25;
+    }
+}

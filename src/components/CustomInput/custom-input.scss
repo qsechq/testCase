@@ -1,0 +1,12 @@
+@import "../../styles.scss";
+
+
+.c-input {
+    background: $background-white;
+    border: none;
+    padding: 11px 17px;
+}
+
+.c-input:focus-visible {
+    outline: none;
+}
