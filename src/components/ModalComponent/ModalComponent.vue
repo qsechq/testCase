@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-content-text">Вы действительно хотите удалить заказ?</div>
             <div class="modal-content__btns">
-                <custom-button >Нет</custom-button>
+                <custom-button @click="closeModal">Нет</custom-button>
                 <custom-button @click="deleteOrder(order.id)">Да</custom-button>
             </div>
         </div>
@@ -21,9 +21,13 @@ export default {
             order.deleteOrder(id)
             order.isShow = false
         }
+        const closeModal = () => {
+            order.isShow = false
+        }
         return {
             order,
-            deleteOrder
+            deleteOrder,
+            closeModal
         }
     },
 }
