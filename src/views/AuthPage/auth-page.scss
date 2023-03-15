@@ -4,6 +4,10 @@
     background: $background-gray2;
     padding: 57px 38px 22px;
     max-width: 344px;
+    &-error {
+        color: red;
+        padding-top: 15px;
+    }
 }
 
 .auth-row {
@@ -17,3 +21,4 @@
 .c-container {
     margin-top: 171px;
 }
+

@@ -6,4 +6,21 @@ const router = createRouter({
   routes
 })
 
+router.beforeEach(async (to, from, next) => {
+  const authRoute = to.name === 'auth'
+  try {
+    if ( localStorage.getItem('user') === null) {
+      next(authRoute ? null : { name: 'auth' })
+    } else {
+      localStorage.getItem('user')
+      next(authRoute ? { name: 'OrderPage' } : null)
+    }
+  } catch (error) {
+    if ( localStorage.getItem('user') === null) {
+      next(authRoute ? null : { name: 'auth' })
+    }
+  }
+})
+
+
 export default router

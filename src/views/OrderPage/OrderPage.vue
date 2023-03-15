@@ -5,7 +5,7 @@
     <div class="container-table">
         <div class="loading" v-if="order.loading">Идет загрузка...</div>
         <div class="table" v-else>
-            <order-table :orders="order.orders" @onRejected="deleteOrder" @onResolve="updateStatus" />
+            <order-table :orders="sortedPosts" @onChange="changeSort" @onRejected="deleteOrder" @onResolve="updateStatus" />
         </div>
     </div>
     <modal-component />
@@ -14,7 +14,7 @@
 <script lang="js">
 import { HeaderComponent } from '@/components/HeaderComponent'
 import { OrderTable } from '@/components/OrderTable'
-import { onMounted } from 'vue';
+import { onMounted, computed } from 'vue';
 import { useOrders } from '../../store/modules/order';
 
 export default {
@@ -22,22 +22,28 @@ export default {
     components: { HeaderComponent, OrderTable },
     setup() {
         const order = useOrders()
+        const updateStatus = (id) => {
+            order.updateStatus(id)
+        }
+        const deleteOrder = (id) => {
+            order.isShow = true
+            order.id = id
+        }
+        const changeSort = (arg) => {   
+            order.selectedSort = arg
+        }
+        const sortedPosts = computed(() => {
+            return [...order.orders].sort((order1, order2) => order1[order.selectedSort] > order2[order.selectedSort] ? 1 : -1)
+        })
         onMounted(() => {
             order.getOrders()
         })
         return {
-            order
-        }
-    },
-    methods: {
-        updateStatus(id) {
-            this.order.updateStatus(id)
-            console.log(id);
-        },
-        deleteOrder(id) {
-            this.order.isShow = true
-            this.order.id = id
-            console.log(id);
+            order,
+            deleteOrder,
+            updateStatus,
+            sortedPosts,
+            changeSort
         }
     }
 }

@@ -1,0 +1,19 @@
+.container {
+    margin: 75px 0 0 43px;
+}
+
+.form-list {
+    margin-bottom: 29px;
+    & .form-item {
+        margin-bottom: 24px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.form-error {
+    color: red;
+    padding-top: 15px;
+}

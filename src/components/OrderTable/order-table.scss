@@ -3,6 +3,9 @@
     & .table-td {
         border: 1px solid #000;
         padding: 9px 26px;
+        &--sort {
+            cursor: pointer;
+        }
     }
     & .table-btn {
         width: 18px;
@@ -17,6 +20,7 @@
         }
     }
 }
+
 
 .succes {
     & .table-td {

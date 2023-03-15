@@ -1,3 +1,4 @@
+import { CreateOrderPage } from '@/views/CreateOrderPage.vue'
 import { OrderPage } from '@/views/OrderPage'
 import { AuthPage } from '../views/AuthPage'
 
@@ -11,5 +12,10 @@ export default [
         path: '/',
         component: OrderPage,
         name: 'OrderPage'
+    },
+    {
+        path: '/create-order',
+        component: CreateOrderPage,
+        name: 'CreateOrderPage'
     },
 ]
